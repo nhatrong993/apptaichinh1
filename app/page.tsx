@@ -8,6 +8,7 @@ import { SocialSentimentCard } from "@/components/SocialSentimentCard";
 import { BreakingNewsSidebar } from "@/components/BreakingNewsSidebar";
 import { SentimentHeatmap } from "@/components/SentimentHeatmap";
 import { CryptoCoin } from "@/types/crypto";
+import { fetchTrendingCoins } from "@/lib/client-api/data-fetcher";
 
 // Fallback data khi không fetch được
 import coinsJson from "@/data/coins.json";
@@ -18,31 +19,10 @@ export default function Home() {
     useEffect(() => {
         async function loadData() {
             try {
-                // Thử fetch từ CoinGecko trực tiếp (client-side)
-                const res = await fetch(
-                    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=30&page=1&sparkline=true&price_change_percentage=1h",
-                    { signal: AbortSignal.timeout(8000) }
-                );
-                if (res.ok) {
-                    const data = await res.json();
-                    const mapped: CryptoCoin[] = data.map((c: any) => ({
-                        id: c.id,
-                        name: c.name,
-                        symbol: c.symbol?.toUpperCase(),
-                        price: c.current_price || 0,
-                        change4h: c.price_change_percentage_1h_in_currency || c.price_change_percentage_24h || 0,
-                        trendScore: Math.min(100, Math.round(Math.random() * 40 + 60)),
-                        sparklineData: c.sparkline_in_7d?.price?.slice(-24) || [],
-                        exchange: "CoinGecko",
-                        aiSentiment: c.price_change_percentage_24h > 0 ? "Bullish" : c.price_change_percentage_24h < -5 ? "Bearish" : "Neutral",
-                        newsType: "Verified",
-                        hasWhaleAlert: (c.total_volume || 0) > 500_000_000,
-                        marketCapSize: c.market_cap > 10_000_000_000 ? "large" : c.market_cap > 1_000_000_000 ? "mid" : "small",
-                    }));
-                    if (mapped.length > 0) {
-                        setCoinsData(mapped);
-                        return;
-                    }
+                const data = await fetchTrendingCoins();
+                if (data.length > 0) {
+                    setCoinsData(data);
+                    return;
                 }
             } catch (err) {
                 console.warn("[Home] Live data unavailable, using fallback:", err);

@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { MessageCircle, RefreshCcw } from "lucide-react";
 import { SocialSentiment } from "@/types/crypto";
+import { fetchSocialSentiment } from "@/lib/client-api/data-fetcher";
 
 // Fallback data khi API chưa sẵn sàng
 const fallbackData: SocialSentiment[] = [
@@ -21,13 +22,10 @@ export function SocialSentimentCard() {
     const fetchSentiment = useCallback(async () => {
         setIsLoading(true);
         try {
-            const res = await fetch('/api/social-sentiment', { cache: 'no-store' });
-            if (res.ok) {
-                const result = await res.json();
-                if (Array.isArray(result) && result.length > 0) {
-                    setData(result);
-                    setIsLive(true);
-                }
+            const result = await fetchSocialSentiment();
+            if (result.length > 0) {
+                setData(result);
+                setIsLive(true);
             }
         } catch (err) {
             console.error("Error fetching social sentiment:", err);

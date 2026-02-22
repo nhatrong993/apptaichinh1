@@ -5,6 +5,7 @@ import { CryptoCoin } from "@/types/crypto";
 import { DeepDiveSheet } from "@/components/DeepDiveSheet";
 import { Sparkline } from "@/components/shared/Sparkline";
 import { TrendingUp, TrendingDown, ArrowRight, Smile, Frown, Meh } from "lucide-react";
+import { fetchBinanceFomoData } from "@/lib/client-api/data-fetcher";
 
 type FilterType = 'All' | 'Gainer' | 'Hottest';
 
@@ -18,12 +19,8 @@ export function BinanceFomoBoard() {
     const fetchFomo = useCallback(async () => {
         try {
             setError(null);
-            const res = await fetch('/api/binance-fomo', { cache: 'no-store' });
-            if (!res.ok) {
-                throw new Error(`HTTP ${res.status}: ${res.statusText}`);
-            }
-            const data = await res.json();
-            if (Array.isArray(data) && data.length > 0) {
+            const data = await fetchBinanceFomoData();
+            if (data.length > 0) {
                 setCoins(data);
             }
         } catch (err) {

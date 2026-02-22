@@ -2,12 +2,13 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { Flame } from "lucide-react";
+import { fetchTickerItems } from "@/lib/client-api/data-fetcher";
 
 // Fallback items khi API chưa sẵn sàng
 const fallbackItems = [
-    "🔥 Đang kết nối CoinGecko...",
+    "🔥 Đang kết nối Binance + CoinGecko...",
     "📡 Chờ dữ liệu trending coins thời gian thực",
-    "💎 Setup API key trong .env.local để xem data thật",
+    "💎 Dữ liệu live từ Binance API",
 ];
 
 export function LiveTrendTicker() {
@@ -15,19 +16,9 @@ export function LiveTrendTicker() {
 
     const fetchTicker = useCallback(async () => {
         try {
-            const res = await fetch('/api/trending', { cache: 'no-store' });
-            if (res.ok) {
-                const coins = await res.json();
-                if (Array.isArray(coins) && coins.length > 0) {
-                    const items = coins.slice(0, 8).map((coin: any) => {
-                        const emoji = coin.change4h >= 0 ? '🚀' : '📉';
-                        const changeStr = coin.change4h >= 0
-                            ? `+${coin.change4h.toFixed(1)}%`
-                            : `${coin.change4h.toFixed(1)}%`;
-                        return `${emoji} $${coin.symbol} $${coin.price < 0.01 ? coin.price.toFixed(6) : coin.price.toFixed(2)} (${changeStr})`;
-                    });
-                    setTrendItems(items);
-                }
+            const items = await fetchTickerItems();
+            if (items.length > 0) {
+                setTrendItems(items);
             }
         } catch (err) {
             console.error("Error fetching ticker data:", err);

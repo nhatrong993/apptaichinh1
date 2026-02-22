@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { Twitter, AlertCircle, Bot, Globe, RefreshCcw } from "lucide-react";
+import { fetchBreakingNews } from "@/lib/client-api/data-fetcher";
 
 interface NewsItem {
     id: string;
@@ -32,13 +33,10 @@ export function BreakingNewsSidebar() {
     const fetchNews = useCallback(async () => {
         setIsLoading(true);
         try {
-            const res = await fetch('/api/breaking-news', { cache: 'no-store' });
-            if (res.ok) {
-                const data = await res.json();
-                if (Array.isArray(data) && data.length > 0) {
-                    setNews(data);
-                    setIsLive(true);
-                }
+            const data = await fetchBreakingNews();
+            if (data.length > 0) {
+                setNews(data);
+                setIsLive(true);
             }
         } catch (err) {
             console.error("Error fetching breaking news:", err);

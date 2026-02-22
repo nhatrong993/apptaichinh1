@@ -5,6 +5,7 @@ import { CryptoCoin } from "@/types/crypto";
 import { DeepDiveSheet } from "@/components/DeepDiveSheet";
 import { Sparkline } from "@/components/shared/Sparkline";
 import { TrendingUp, TrendingDown, ArrowRight, Smile, Frown, Meh, ExternalLink, Gem } from "lucide-react";
+import { fetchAlphaTokens } from "@/lib/client-api/data-fetcher";
 
 type FilterType = 'All' | 'Gainer' | 'Hottest';
 
@@ -18,12 +19,8 @@ export function CoinListBoard() {
     const fetchAlpha = useCallback(async () => {
         try {
             setError(null);
-            const res = await fetch('/api/alpha-binance', { cache: 'no-store' });
-            if (!res.ok) {
-                throw new Error(`HTTP ${res.status}: ${res.statusText}`);
-            }
-            const data = await res.json();
-            if (Array.isArray(data) && data.length > 0) {
+            const data = await fetchAlphaTokens();
+            if (data.length > 0) {
                 setCoins(data);
             }
         } catch (err) {

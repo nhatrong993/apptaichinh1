@@ -36,6 +36,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Remove API routes (incompatible with static export)
+        run: rm -rf app/api
+
       - name: Build with Next.js
         run: npm run build
         env:

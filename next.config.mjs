@@ -1,23 +1,19 @@
 /** @type {import('next').NextConfig} */
+
+const isProd = process.env.NODE_ENV === 'production';
+const basePath = isProd ? '/apptaichinh1' : '';
+
 const nextConfig = {
     reactStrictMode: true,
 
-    // Cho phép fetch external APIs
-    experimental: {
-        serverActions: {
-            allowedOrigins: ['localhost:3000'],
-        },
-    },
+    // Static export cho GitHub Pages
+    output: 'export',
+    basePath: basePath,
+    assetPrefix: basePath,
 
-    // Logging cho server-side
-    logging: {
-        fetches: {
-            fullUrl: true,
-        },
-    },
-
-    // Image domains (nếu cần hiển thị coin icons)
+    // Tắt image optimization vì GitHub Pages không hỗ trợ
     images: {
+        unoptimized: true,
         remotePatterns: [
             {
                 protocol: 'https',
@@ -29,6 +25,9 @@ const nextConfig = {
             },
         ],
     },
+
+    // Trailing slash cho GitHub Pages routing
+    trailingSlash: true,
 };
 
 export default nextConfig;

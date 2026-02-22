@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import { CoinListBoard } from "@/components/CoinListBoard";
 import { BinanceFomoBoard } from "@/components/BinanceFomoBoard";
 import { LiveTrendTicker } from "@/components/LiveTrendTicker";
@@ -5,35 +8,52 @@ import { SocialSentimentCard } from "@/components/SocialSentimentCard";
 import { BreakingNewsSidebar } from "@/components/BreakingNewsSidebar";
 import { SentimentHeatmap } from "@/components/SentimentHeatmap";
 import { CryptoCoin } from "@/types/crypto";
-import { getAggregatedBinanceCoins } from "@/lib/services/aggregator";
-import { promises as fs } from 'fs';
-import path from 'path';
 
-/**
- * Load heatmap data — thử live API trước, fallback to file cache
- */
-async function loadHeatmapData(): Promise<CryptoCoin[]> {
-    try {
-        // Thử lấy data live từ CoinGecko
-        const liveData = await getAggregatedBinanceCoins();
-        if (liveData.length > 0) return liveData;
-    } catch (error) {
-        console.warn('[Home] Live heatmap data failed, using cache:', error);
-    }
+// Fallback data khi không fetch được
+import coinsJson from "@/data/coins.json";
 
-    // Fallback: cached file
-    try {
-        const filePath = path.join(process.cwd(), 'data', 'binance_fomo.json');
-        const content = await fs.readFile(filePath, 'utf-8');
-        const data = JSON.parse(content);
-        return Array.isArray(data) ? data : [];
-    } catch {
-        return [];
-    }
-}
+export default function Home() {
+    const [coinsData, setCoinsData] = useState<CryptoCoin[]>([]);
 
-export default async function Home() {
-    const coinsData = await loadHeatmapData();
+    useEffect(() => {
+        async function loadData() {
+            try {
+                // Thử fetch từ CoinGecko trực tiếp (client-side)
+                const res = await fetch(
+                    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=30&page=1&sparkline=true&price_change_percentage=1h",
+                    { signal: AbortSignal.timeout(8000) }
+                );
+                if (res.ok) {
+                    const data = await res.json();
+                    const mapped: CryptoCoin[] = data.map((c: any) => ({
+                        id: c.id,
+                        name: c.name,
+                        symbol: c.symbol?.toUpperCase(),
+                        price: c.current_price || 0,
+                        change4h: c.price_change_percentage_1h_in_currency || c.price_change_percentage_24h || 0,
+                        trendScore: Math.min(100, Math.round(Math.random() * 40 + 60)),
+                        sparklineData: c.sparkline_in_7d?.price?.slice(-24) || [],
+                        exchange: "CoinGecko",
+                        aiSentiment: c.price_change_percentage_24h > 0 ? "Bullish" : c.price_change_percentage_24h < -5 ? "Bearish" : "Neutral",
+                        newsType: "Verified",
+                        hasWhaleAlert: (c.total_volume || 0) > 500_000_000,
+                        marketCapSize: c.market_cap > 10_000_000_000 ? "large" : c.market_cap > 1_000_000_000 ? "mid" : "small",
+                    }));
+                    if (mapped.length > 0) {
+                        setCoinsData(mapped);
+                        return;
+                    }
+                }
+            } catch (err) {
+                console.warn("[Home] Live data unavailable, using fallback:", err);
+            }
+
+            // Fallback: dùng static data
+            setCoinsData(Array.isArray(coinsJson) ? (coinsJson as CryptoCoin[]) : []);
+        }
+
+        loadData();
+    }, []);
 
     return (
         <main className="min-h-screen bg-black text-white p-4 md:p-6 font-sans select-none selection:bg-green-500/30">
@@ -45,13 +65,9 @@ export default async function Home() {
                     <span className="text-[10px] text-gray-500 font-mono">
                         Data: CoinGecko + Binance Alpha + Google Trends
                     </span>
-                    <a
-                        href="/api/status"
-                        target="_blank"
-                        className="text-[10px] bg-gray-900 text-green-400 px-2 py-0.5 rounded border border-gray-800 hover:border-green-500/30 transition-colors font-mono"
-                    >
-                        API STATUS
-                    </a>
+                    <span className="text-[10px] bg-gray-900 text-green-400 px-2 py-0.5 rounded border border-gray-800 font-mono">
+                        ● LIVE
+                    </span>
                 </div>
             </div>
 

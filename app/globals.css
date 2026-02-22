@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 142.1 70.6% 45.3%;
+    --primary-foreground: 144.9 80.4% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 142.1 70.6% 45.3%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-inter, system-ui, -apple-system, sans-serif);
+  }
+
+  /* Sử dụng JetBrains Mono cho tất cả .font-mono */
+  .font-mono {
+    font-family: var(--font-mono, 'JetBrains Mono', 'Courier New', monospace);
+  }
+}
+
+/* ================================================================
+   Sparkline Glow Effects
+   ================================================================ */
+.sparkline-up {
+  filter: drop-shadow(0 0 4px rgba(34, 197, 94, 0.5));
+}
+
+.sparkline-down {
+  filter: drop-shadow(0 0 4px rgba(239, 68, 68, 0.5));
+}
+
+/* ================================================================
+   Pulse Animations (cho Trend Score badges)
+   ================================================================ */
+@keyframes pulse-intense {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7);
+  }
+
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(74, 222, 128, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
+  }
+}
+
+@keyframes pulse-intense-yellow {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(234, 179, 8, 0.7);
+  }
+
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(234, 179, 8, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(234, 179, 8, 0);
+  }
+}
+
+.pulse-animation {
+  animation: pulse-intense 2s infinite;
+}
+
+.pulse-animation-yellow {
+  animation: pulse-intense-yellow 2s infinite;
+}
+
+/* ================================================================
+   Marquee Animation (cho LiveTrendTicker)
+   FIX: Animation này trước đây thiếu — class animate-[marquee_20s_linear_infinite]
+   sẽ không hoạt động nếu không có @keyframes marquee.
+   ================================================================ */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ================================================================
+   Slide-in Animation (cho DeepDiveSheet)
+   FIX: Thay thế tailwindcss-animate plugin dependency
+   ================================================================ */
+@keyframes slide-in-from-right {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-in.slide-in-from-right {
+  animation: slide-in-from-right 0.3s ease-out;
+}
+
+/* ================================================================
+   Custom Scrollbar (cho sidebar)
+   ================================================================ */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.custom-scrollbar:hover::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Firefox scrollbar support */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.1) rgba(0, 0, 0, 0.2);
+}

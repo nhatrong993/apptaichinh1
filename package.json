@@ -1,0 +1,39 @@
+{
+    "name": "crypto-trend-hunter",
+    "version": "0.2.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "scanner": "node scripts/scanner.js",
+        "start-all": "node start-all.js",
+        "check-api": "curl -s http://localhost:3000/api/status | node -e \"process.stdin.on('data',d=>console.log(JSON.stringify(JSON.parse(d),null,2)))\""
+    },
+    "dependencies": {
+        "@radix-ui/react-dialog": "^1.0.5",
+        "@radix-ui/react-slot": "^1.0.2",
+        "class-variance-authority": "^0.7.0",
+        "clsx": "^2.1.1",
+        "google-trends-api": "^4.9.2",
+        "lucide-react": "^0.378.0",
+        "next": "^14.2.3",
+        "node-cron": "^4.2.1",
+        "puppeteer": "^24.37.5",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "tailwind-merge": "^2.6.1"
+    },
+    "devDependencies": {
+        "@types/node": "^20",
+        "@types/react": "^18",
+        "@types/react-dom": "^18",
+        "autoprefixer": "^10.4.24",
+        "eslint": "^8",
+        "eslint-config-next": "14.2.3",
+        "postcss": "^8",
+        "tailwindcss": "^3.4.1",
+        "typescript": "^5"
+    }
+}

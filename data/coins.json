@@ -1,0 +1,283 @@
+[
+  {
+    "id": "bitcoin",
+    "name": "Bitcoin",
+    "symbol": "BTC",
+    "price": 68360,
+    "change4h": 0.95,
+    "trendSource": [
+      "DexScreener",
+      "Google"
+    ],
+    "trendScore": 98,
+    "sparklineData": [
+      69733.54122326875,
+      69387.60144625134,
+      68411.1284780013,
+      68856.54508076754,
+      68070.65432562269,
+      67465.52794094842,
+      67116.50346018281,
+      67227.67488249822,
+      67920.91594116506
+    ],
+    "summary": "Bitcoin (BTC) đang #1 Top Trending trên CoinGecko.\nĐang hot trên Google Trends (score: 93/100).",
+    "exchange": "Binance",
+    "aiSentiment": "Neutral",
+    "newsType": "Rumor",
+    "hasWhaleAlert": true,
+    "marketCapSize": 10
+  },
+  {
+    "id": "aztec",
+    "name": "Aztec",
+    "symbol": "AZTEC",
+    "price": 0.03470549,
+    "change4h": 11.1,
+    "trendSource": [
+      "DexScreener"
+    ],
+    "trendScore": 93,
+    "sparklineData": [
+      0.023632678587772245,
+      0.02409182469127521,
+      0.022023227531402113,
+      0.022650952201653186,
+      0.02198310464766631,
+      0.019063035805050893,
+      0.018816445036656363,
+      0.01927972268567844,
+      0.031642474671245605
+    ],
+    "summary": "Aztec (AZTEC) đang #2 Top Trending trên CoinGecko.\nGiá tăng 11.1% trong 24h.",
+    "exchange": "DEX",
+    "aiSentiment": "Bullish",
+    "newsType": "Rumor",
+    "hasWhaleAlert": false,
+    "marketCapSize": 5
+  },
+  {
+    "id": "espresso",
+    "name": "Espresso",
+    "symbol": "ESP",
+    "price": 0.090879,
+    "change4h": 28.81,
+    "trendSource": [
+      "DexScreener"
+    ],
+    "trendScore": 88,
+    "sparklineData": [
+      0.06066156938124363,
+      0.05698752644613868,
+      0.05500163016052553,
+      0.059617271364026156,
+      0.05944495161271152,
+      0.07921065951412212,
+      0.0799888548748978,
+      0.0729521665181743,
+      0.067043407039531
+    ],
+    "summary": "Espresso (ESP) đang #3 Top Trending trên CoinGecko.\nGiá tăng 28.8% trong 24h.",
+    "exchange": "DEX",
+    "aiSentiment": "Bullish",
+    "newsType": "Rumor",
+    "hasWhaleAlert": false,
+    "marketCapSize": 3
+  },
+  {
+    "id": "injective-protocol",
+    "name": "Injective",
+    "symbol": "INJ",
+    "price": 3.8,
+    "change4h": 10.87,
+    "trendSource": [
+      "DexScreener"
+    ],
+    "trendScore": 83,
+    "sparklineData": [
+      3.292778904867742,
+      3.1441680420702536,
+      3.143781673638092,
+      3.1515414594642035,
+      3.1543554822744158,
+      3.100072695098651,
+      3.323978560538843,
+      3.239011125452216,
+      3.390898728823566
+    ],
+    "summary": "Injective (INJ) đang #4 Top Trending trên CoinGecko.\nGiá tăng 10.9% trong 24h.",
+    "exchange": "DEX",
+    "aiSentiment": "Bullish",
+    "newsType": "Rumor",
+    "hasWhaleAlert": false,
+    "marketCapSize": 5
+  },
+  {
+    "id": "ribbita-by-virtuals",
+    "name": "Ribbita by Virtuals",
+    "symbol": "TIBBIR",
+    "price": 0.182552,
+    "change4h": 20.07,
+    "trendSource": [
+      "DexScreener"
+    ],
+    "trendScore": 78,
+    "sparklineData": [
+      0.13173651463405622,
+      0.1305581746308626,
+      0.13405040638123816,
+      0.1308876461431725,
+      0.125450484203192,
+      0.13379632223462112,
+      0.1286596325615563,
+      0.14139908092715814,
+      0.1540847888791878
+    ],
+    "summary": "Ribbita by Virtuals (TIBBIR) đang #5 Top Trending trên CoinGecko.\nGiá tăng 20.1% trong 24h.",
+    "exchange": "DEX",
+    "aiSentiment": "Bullish",
+    "newsType": "Rumor",
+    "hasWhaleAlert": false,
+    "marketCapSize": 5
+  },
+  {
+    "id": "bittensor",
+    "name": "Bittensor",
+    "symbol": "TAO",
+    "price": 181.28,
+    "change4h": -1.03,
+    "trendSource": [
+      "DexScreener"
+    ],
+    "trendScore": 73,
+    "sparklineData": [
+      192.3394168065387,
+      186.9350875596941,
+      203.27864257332175,
+      193.3524357214778,
+      197.97213317115717,
+      191.04945012902826,
+      185.64206312036634,
+      178.6928539632195,
+      179.38880579391582
+    ],
+    "summary": "Bittensor (TAO) đang #6 Top Trending trên CoinGecko.",
+    "exchange": "Binance",
+    "aiSentiment": "Neutral",
+    "newsType": "Rumor",
+    "hasWhaleAlert": false,
+    "marketCapSize": 7
+  },
+  {
+    "id": "solana",
+    "name": "Solana",
+    "symbol": "SOL",
+    "price": 86.2,
+    "change4h": 1.89,
+    "trendSource": [
+      "DexScreener"
+    ],
+    "trendScore": 68,
+    "sparklineData": [
+      88.01832417610606,
+      87.99074740629007,
+      84.99454910288505,
+      86.74030918734482,
+      85.17445966718945,
+      83.01635836759996,
+      82.35460377603462,
+      82.9340053468958,
+      85.08957969814067
+    ],
+    "summary": "Solana (SOL) đang #7 Top Trending trên CoinGecko.",
+    "exchange": "Binance",
+    "aiSentiment": "Neutral",
+    "newsType": "Rumor",
+    "hasWhaleAlert": true,
+    "marketCapSize": 9
+  },
+  {
+    "id": "aave",
+    "name": "Aave",
+    "symbol": "AAVE",
+    "price": 121.24,
+    "change4h": 2.58,
+    "trendSource": [
+      "DexScreener"
+    ],
+    "trendScore": 63,
+    "sparklineData": [
+      129.02165925197386,
+      126.5714937582545,
+      126.25080718131812,
+      126.99575286320619,
+      128.3181483994687,
+      127.59130138971447,
+      124.22846374964125,
+      125.88917150102027,
+      117.35905426574601
+    ],
+    "summary": "Aave (AAVE) đang #8 Top Trending trên CoinGecko.",
+    "exchange": "Binance",
+    "aiSentiment": "Neutral",
+    "newsType": "Rumor",
+    "hasWhaleAlert": false,
+    "marketCapSize": 7
+  },
+  {
+    "id": "ethereum",
+    "name": "Ethereum",
+    "symbol": "ETH",
+    "price": 1979.96,
+    "change4h": 0.71,
+    "trendSource": [
+      "DexScreener"
+    ],
+    "trendScore": 58,
+    "sparklineData": [
+      2083.9004640182284,
+      2015.4562881129427,
+      1965.5628662004508,
+      1997.743430678263,
+      1998.9440489431877,
+      1982.3948918302997,
+      1982.2263820961646,
+      1957.303524375768,
+      1975.1179199411781
+    ],
+    "summary": "Ethereum (ETH) đang #9 Top Trending trên CoinGecko.",
+    "exchange": "Binance",
+    "aiSentiment": "Neutral",
+    "newsType": "Rumor",
+    "hasWhaleAlert": true,
+    "marketCapSize": 10
+  },
+  {
+    "id": "punch-2",
+    "name": "パンチ (Punch)",
+    "symbol": "PUNCH",
+    "price": 0.03629925,
+    "change4h": 9.79,
+    "trendSource": [
+      "DexScreener"
+    ],
+    "trendScore": 53,
+    "sparklineData": [
+      0.0068316613762333675,
+      0.013972874056328922,
+      0.01607381628291525,
+      0.009785752138198097,
+      0.011229387069433334,
+      0.01198426156383294,
+      0.00950374504873991,
+      0.03742864201052974,
+      0.029119176276113254
+    ],
+    "summary": "パンチ (Punch) (PUNCH) đang #10 Top Trending trên CoinGecko.\nGiá tăng 9.8% trong 24h.",
+    "exchange": "DEX",
+    "aiSentiment": "Neutral",
+    "newsType": "Rumor",
+    "hasWhaleAlert": false,
+    "marketCapSize": 3
+  }
+]

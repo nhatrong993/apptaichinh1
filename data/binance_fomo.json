@@ -1,0 +1,226 @@
+[
+  {
+    "id": "tether",
+    "name": "Tether",
+    "symbol": "USDT",
+    "price": 0.999756,
+    "change4h": -0.01,
+    "trendSource": [
+      "Binance"
+    ],
+    "trendScore": 95,
+    "sparklineData": [
+      0.9997001065206289,
+      0.9995233662908612,
+      0.9995926963155206,
+      0.9996301944847859,
+      0.9996477875127288,
+      0.9997323980299179,
+      0.9997147814520742,
+      0.999612068960522,
+      0.9997486786019185
+    ],
+    "summary": "Tether (USDT) — Top 1 theo volume trên thị trường.\nMarket Cap Rank: #3\nGiá giảm 0.0% trong 24h.",
+    "exchange": "Binance",
+    "aiSentiment": "Neutral",
+    "newsType": "Rumor",
+    "hasWhaleAlert": true,
+    "marketCapSize": 10
+  },
+  {
+    "id": "bitcoin",
+    "name": "Bitcoin",
+    "symbol": "BTC",
+    "price": 68360,
+    "change4h": 0.95,
+    "trendSource": [
+      "Binance"
+    ],
+    "trendScore": 91,
+    "sparklineData": [
+      69733.54122326875,
+      69387.60144625134,
+      68411.1284780013,
+      68856.54508076754,
+      68070.65432562269,
+      67465.52794094842,
+      67116.50346018281,
+      67227.67488249822,
+      67920.91594116506
+    ],
+    "summary": "Bitcoin (BTC) — Top 2 theo volume trên thị trường.\nMarket Cap Rank: #1\nGiá tăng 0.9% trong 24h.",
+    "exchange": "Binance",
+    "aiSentiment": "Neutral",
+    "newsType": "Rumor",
+    "hasWhaleAlert": true,
+    "marketCapSize": 10
+  },
+  {
+    "id": "ethereum",
+    "name": "Ethereum",
+    "symbol": "ETH",
+    "price": 1980,
+    "change4h": 0.71,
+    "trendSource": [
+      "Binance"
+    ],
+    "trendScore": 87,
+    "sparklineData": [
+      2083.9004640182284,
+      2015.4562881129427,
+      1965.5628662004508,
+      1997.743430678263,
+      1998.9440489431877,
+      1982.3948918302997,
+      1982.2263820961646,
+      1957.303524375768,
+      1975.1179199411781
+    ],
+    "summary": "Ethereum (ETH) — Top 3 theo volume trên thị trường.\nMarket Cap Rank: #2\nGiá tăng 0.7% trong 24h.",
+    "exchange": "Binance",
+    "aiSentiment": "Neutral",
+    "newsType": "Rumor",
+    "hasWhaleAlert": true,
+    "marketCapSize": 10
+  },
+  {
+    "id": "usd-coin",
+    "name": "USDC",
+    "symbol": "USDC",
+    "price": 1,
+    "change4h": 0,
+    "trendSource": [
+      "Binance"
+    ],
+    "trendScore": 83,
+    "sparklineData": [
+      0.9998178698921717,
+      0.9999014854433868,
+      0.9999027438792836,
+      0.9999994763038653,
+      0.9999993131048427,
+      1.000002217952194,
+      0.9999207745562625,
+      0.999982407159082,
+      0.9999672266850812
+    ],
+    "summary": "USDC (USDC) — Top 4 theo volume trên thị trường.\nMarket Cap Rank: #6\nGiá tăng 0.0% trong 24h.",
+    "exchange": "Binance",
+    "aiSentiment": "Neutral",
+    "newsType": "Rumor",
+    "hasWhaleAlert": true,
+    "marketCapSize": 10
+  },
+  {
+    "id": "solana",
+    "name": "Solana",
+    "symbol": "SOL",
+    "price": 86.2,
+    "change4h": 1.9,
+    "trendSource": [
+      "Binance"
+    ],
+    "trendScore": 79,
+    "sparklineData": [
+      88.01832417610606,
+      87.99074740629007,
+      84.99454910288505,
+      86.74030918734482,
+      85.17445966718945,
+      83.01635836759996,
+      82.35460377603462,
+      82.9340053468958,
+      85.08957969814067
+    ],
+    "summary": "Solana (SOL) — Top 5 theo volume trên thị trường.\nMarket Cap Rank: #7\nGiá tăng 1.9% trong 24h.",
+    "exchange": "Binance",
+    "aiSentiment": "Neutral",
+    "newsType": "Rumor",
+    "hasWhaleAlert": true,
+    "marketCapSize": 9
+  },
+  {
+    "id": "ripple",
+    "name": "XRP",
+    "symbol": "XRP",
+    "price": 1.45,
+    "change4h": 0.99,
+    "trendSource": [
+      "Binance"
+    ],
+    "trendScore": 75,
+    "sparklineData": [
+      1.4881590730116554,
+      1.5340295575163645,
+      1.4648008336367004,
+      1.4857348843431935,
+      1.4854438718162337,
+      1.4659232721674569,
+      1.4264687677334642,
+      1.4179184984131001,
+      1.4316681904004998
+    ],
+    "summary": "XRP (XRP) — Top 6 theo volume trên thị trường.\nMarket Cap Rank: #4\nGiá tăng 1.0% trong 24h.",
+    "exchange": "Binance",
+    "aiSentiment": "Neutral",
+    "newsType": "Rumor",
+    "hasWhaleAlert": false,
+    "marketCapSize": 10
+  },
+  {
+    "id": "usd1-wlfi",
+    "name": "USD1",
+    "symbol": "USD1",
+    "price": 0.999424,
+    "change4h": 0.03,
+    "trendSource": [
+      "Binance"
+    ],
+    "trendScore": 71,
+    "sparklineData": [
+      0.9993546918900764,
+      0.9996167465669468,
+      0.9990896157216789,
+      0.9991339995124929,
+      0.9993747120519856,
+      0.9996792599848955,
+      0.9994748161795202,
+      0.9989088318663102,
+      0.9990964269888059
+    ],
+    "summary": "USD1 (USD1) — Top 7 theo volume trên thị trường.\nMarket Cap Rank: #22\nGiá tăng 0.0% trong 24h.",
+    "exchange": "Binance",
+    "aiSentiment": "Neutral",
+    "newsType": "Rumor",
+    "hasWhaleAlert": false,
+    "marketCapSize": 8
+  },
+  {
+    "id": "binancecoin",
+    "name": "BNB",
+    "symbol": "BNB",
+    "price": 625.04,
+    "change4h": 0.96,
+    "trendSource": [
+      "Binance"
+    ],
+    "trendScore": 67,
+    "sparklineData": [
+      631.4257576986167,
+      620.0978713327981,
+      612.3674064677767,
+      626.5485113579103,
+      622.4032945047796,
+      615.7307399706732,
+      613.1216362376651,
+      608.2675172134195,
+      626.8931058750463
+    ],
+    "summary": "BNB (BNB) — Top 8 theo volume trên thị trường.\nMarket Cap Rank: #5\nGiá tăng 1.0% trong 24h.",
+    "exchange": "Binance",
+    "aiSentiment": "Neutral",
+    "newsType": "Rumor",
+    "hasWhaleAlert": false,
+    "marketCapSize": 10
+  }
+]
